@@ -10,6 +10,10 @@ e = (0, 0, 0)
 
 class GameArea:
 
+    ships = [[[2,3,w],
+              [3,3,w],
+              [4,3,w]]]
+
     def __init__(self):
         self.area = [e, e, e, e, e, e, e, e,
                      e, e, e, e, e, e, e, e,
@@ -30,9 +34,17 @@ class GameArea:
     def show_area(self):
         sense.set_pixels(self.area)
 
+    def set_ship(self, ship):
+        for i in self.ships[ship]:
+            self.set_pixel(i[0],
+                           i[1],
+                           i[2])
+
 
 comp_area = GameArea()
 
-comp_area.set_pixel(1, 6, z=b)
+#comp_area.set_pixel(1, 6, z=b)
 
-comp_area.show_area()import
+comp_area.set_ship(0)
+
+comp_area.show_area()
